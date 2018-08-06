@@ -62,16 +62,8 @@ const TemplateWrapper = ({
               crossOrigin: 'anonymous',
             },
             {
-              rel: 'icon',
-              type: 'image/png',
-              sizes: '16x16',
-              href: `${META_ASSETS_URL}favicon-16x16-v1.jpg`,
-            },
-            {
-              rel: 'icon',
-              type: 'image/png',
-              sizes: '32x32',
-              href: `${META_ASSETS_URL}favicon-32x32-v1.jpg`,
+              rel: 'shortcut icon',
+              href: `${META_ASSETS_URL}favicon-v1.ico`,
             },
           ]}
         />
