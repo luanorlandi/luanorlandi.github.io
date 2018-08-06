@@ -31,6 +31,12 @@ module.exports = {
         anonymize: true,
         respectDNT: true,
       },
+    }, {
+      resolve: 'gatsby-plugin-hotjar',
+      options: {
+        id: process.env.HOTJAR_ID_LUAN_ORLANDI,
+        sv: process.env.HOTJAR_SNIPPET_VERSION_LUAN_ORLANDI,
+      },
     },
   ],
 };
