@@ -58,7 +58,7 @@ jobs:
 
               yarn build
 
-              cp -a build/. out/.
+              cp -a public/. out/.
 
               mkdir -p out/.circleci && cp -a .circleci/. out/.circleci/.
               cd out
