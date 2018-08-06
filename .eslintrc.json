@@ -1,0 +1,25 @@
+{
+  "extends": "airbnb",
+  "parser": "babel-eslint",
+  "env": {
+    "browser": true
+  },
+  "settings": {
+    "import/core-modules": [
+      "react",
+      "prop-types"
+    ]
+  },
+  "globals": {
+    "graphql": true
+  },
+  "rules": {
+    "react/forbid-prop-types": 0,
+    "react/jsx-filename-extension": [
+      1, {
+        "extensions": [".js", ".jsx"]
+      }
+    ],
+    "import/no-unresolved": 0
+  }
+}
