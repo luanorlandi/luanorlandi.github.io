@@ -49,19 +49,20 @@ jobs:
               git config --global user.email $GH_EMAIL
               git config --global user.name $GH_NAME
 
-              git clone $CIRCLE_REPOSITORY_URL out
+              git clone $CIRCLE_REPOSITORY_URL source
 
-              cd out
+              cd source
               git checkout $TARGET_BRANCH || git checkout --orphan $TARGET_BRANCH
               git rm -rf .
               cd ..
 
               yarn build
 
-              cp -a public/. out/.
+              cp -a public/. source/.
+              cp README.md source/
 
-              mkdir -p out/.circleci && cp -a .circleci/. out/.circleci/.
-              cd out
+              mkdir -p source/.circleci && cp -a .circleci/. source/.circleci/.
+              cd source
 
               git add -A
               git commit -m "Automated deployment to GitHub Pages: ${CIRCLE_SHA1}" --allow-empty
