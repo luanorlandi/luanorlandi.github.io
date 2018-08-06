@@ -9,7 +9,7 @@ import generateUrl from 'constants/paths';
 import Header from 'components/Header';
 import 'styles/index.scss';
 
-const META_ASSETS_URL = 'https://raw.githubusercontent.com/luanorlandi/luanorlandi.github.io/master/src/assets/meta/';
+const META_ASSETS_URL = 'https://raw.githubusercontent.com/luanorlandi/luanorlandi.github.io/source/src/assets/meta/';
 
 const TemplateWrapper = ({
   location,
