@@ -7,7 +7,7 @@ jobs:
   build:
     branches:
         ignore:
-          - gh-pages
+          - master
     docker:
       # specify the version you desire here
       - image: circleci/node:10
@@ -19,8 +19,8 @@ jobs:
 
     working_directory: ~/repo
     environment:
-      - SOURCE_BRANCH: master
-      - TARGET_BRANCH: gh-pages
+      - SOURCE_BRANCH: source
+      - TARGET_BRANCH: master
 
     steps:
       - checkout
