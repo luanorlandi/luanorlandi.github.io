@@ -3,14 +3,22 @@ import PropTypes from 'prop-types';
 import Link from 'gatsby-link';
 import { injectIntl, FormattedMessage } from 'react-intl';
 
+import { library } from '@fortawesome/fontawesome-svg-core';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import {
+  faGithub, faTwitter, faMedium, faLinkedin,
+} from '@fortawesome/fontawesome-free-brands';
+
 import url, { externalLink } from 'constants/paths';
 import profileImage from 'assets/profile.jpg';
 
+library.add(faGithub, faTwitter, faMedium, faLinkedin);
+
 const socialMedias = [
-  { icon: 'fa-github', link: externalLink.github },
-  { icon: 'fa-twitter', link: externalLink.twitter },
-  { icon: 'fa-medium', link: externalLink.medium },
-  { icon: 'fa-linkedin', link: externalLink.linkedin },
+  { icon: 'github', link: externalLink.github },
+  { icon: 'twitter', link: externalLink.twitter },
+  { icon: 'medium', link: externalLink.medium },
+  { icon: 'linkedin', link: externalLink.linkedin },
 ];
 
 const Home = ({ intl }) => (
@@ -36,14 +44,12 @@ const Home = ({ intl }) => (
       <div className="has-text-centered is-mobile">
         {socialMedias.map(socialMedia => (
           <a
-            className="is-2"
             href={socialMedia.link}
-            target="_blank"
-            rel="noopener noreferrer"
+            aria-label={socialMedia.icon}
             key={socialMedia.icon}
           >
             <span className="icon is-large">
-              <i className={`fab fa-2x ${socialMedia.icon}`} />
+              <FontAwesomeIcon className="fab fa-2x" icon={['fab', socialMedia.icon]} />
             </span>
           </a>
         ))}
