@@ -7,9 +7,11 @@ import 'intl';
 
 import generateUrl from 'constants/paths';
 import Header from 'components/Header';
+import ogImage from 'assets/meta/luanorlandi.jpg';
+import favicon from 'assets/meta/favicon.ico';
 import 'styles/index.scss';
 
-const META_ASSETS_URL = 'https://raw.githubusercontent.com/luanorlandi/luanorlandi.github.io/source/src/assets/meta/';
+const HOST = process.env.NODE_ENV === 'production' ? 'https://luanorlandi.github.io' : '';
 
 const TemplateWrapper = ({
   location,
@@ -42,7 +44,7 @@ const TemplateWrapper = ({
             { property: 'og:type', content: 'website' },
             { property: 'og:title', content: data.site.siteMetadata.title },
             { property: 'og:description', content: i18nMessages.meta.description },
-            { property: 'og:image', content: `${META_ASSETS_URL}luanorlandi-v1.jpg` },
+            { property: 'og:image', content: `${HOST}${ogImage}` },
             { property: 'og:image:alt', content: i18nMessages.meta.description },
             { property: 'og:image:type', content: 'image/jpg' },
             { property: 'og:image:width', content: '1365' },
@@ -63,7 +65,7 @@ const TemplateWrapper = ({
             },
             {
               rel: 'shortcut icon',
-              href: `${META_ASSETS_URL}favicon-v2.ico`,
+              href: `${HOST}${favicon}`,
             },
           ]}
         />
