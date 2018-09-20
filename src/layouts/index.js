@@ -63,7 +63,7 @@ const TemplateWrapper = ({
             },
             {
               rel: 'shortcut icon',
-              href: `${META_ASSETS_URL}favicon-v1.ico`,
+              href: `${META_ASSETS_URL}favicon-v2.ico`,
             },
           ]}
         />
