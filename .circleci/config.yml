@@ -59,7 +59,6 @@ jobs:
               yarn build
 
               cp -a public/. source/.
-              cp README.md source/
 
               mkdir -p source/.circleci && cp -a .circleci/. source/.circleci/.
               cd source
