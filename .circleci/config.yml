@@ -38,9 +38,6 @@ jobs:
           paths:
             - node_modules
           key: v1-dependencies-{{ checksum "package.json" }}
-        
-      # run tests!
-      - run: yarn test
 
       - deploy:
           name: Deploy
@@ -59,7 +56,6 @@ jobs:
               yarn build
 
               cp -a public/. source/.
-              cp README.md source/
 
               mkdir -p source/.circleci && cp -a .circleci/. source/.circleci/.
               cd source
