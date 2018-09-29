@@ -1,9 +1,12 @@
 {
-  "name": "gatsby-starter-default",
-  "description": "Gatsby default starter",
-  "version": "1.0.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "name": "luanorlandi.github.io",
+  "description": "Website of Luan Orlandi",
+  "version": "1.0.1",
+  "author": "Luan Orlandi <orlandi.luan@gmail.com>",
   "dependencies": {
+    "@fortawesome/fontawesome-free-brands": "^5.0.13",
+    "@fortawesome/fontawesome-svg-core": "^1.2.4",
+    "@fortawesome/react-fontawesome": "^0.1.3",
     "bulma": "^0.7.1",
     "gatsby": "^1.9.277",
     "gatsby-link": "^1.6.46",
@@ -18,15 +21,13 @@
     "react-intl": "^2.4.0"
   },
   "keywords": [
-    "gatsby"
+    "website, portfolio, luanorlandi, gatsby"
   ],
   "license": "MIT",
   "scripts": {
     "start": "gatsby develop",
     "build": "gatsby build",
-    "serve": "gatsby serve",
-    "format": "prettier --write 'src/**/*.js'",
-    "test": "echo \"No test specified\""
+    "serve": "gatsby serve"
   },
   "devDependencies": {
     "babel-eslint": "^8.2.6",
@@ -41,6 +42,6 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/gatsbyjs/gatsby-starter-default"
+    "url": "https://github.com/luanorlandi/luanorlandi.github.io"
   }
 }

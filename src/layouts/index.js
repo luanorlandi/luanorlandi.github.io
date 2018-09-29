@@ -7,9 +7,11 @@ import 'intl';
 
 import generateUrl from 'constants/paths';
 import Header from 'components/Header';
+import ogImage from 'assets/meta/luanorlandi.jpg';
+import favicon from 'assets/meta/favicon.ico';
 import 'styles/index.scss';
 
-const META_ASSETS_URL = 'https://raw.githubusercontent.com/luanorlandi/luanorlandi.github.io/source/src/assets/meta/';
+const HOST = process.env.NODE_ENV === 'production' ? 'https://luanorlandi.github.io' : '';
 
 const TemplateWrapper = ({
   location,
@@ -39,7 +41,7 @@ const TemplateWrapper = ({
             { property: 'og:type', content: 'website' },
             { property: 'og:title', content: data.site.siteMetadata.title },
             { property: 'og:description', content: i18nMessages.meta.description },
-            { property: 'og:image', content: `${META_ASSETS_URL}luanorlandi-v1.jpg` },
+            { property: 'og:image', content: `${HOST}${ogImage}` },
             { property: 'og:image:alt', content: i18nMessages.meta.description },
             { property: 'og:image:type', content: 'image/jpg' },
             { property: 'og:image:width', content: '1365' },
@@ -47,23 +49,13 @@ const TemplateWrapper = ({
           ]}
           link={[
             {
-              rel: 'stylesheet',
-              href: 'https://use.fontawesome.com/releases/v5.2.0/css/brands.css',
-              integrity: 'sha384-nT8r1Kzllf71iZl81CdFzObMsaLOhqBU1JD2+XoAALbdtWaXDOlWOZTR4v1ktjPE',
-              crossOrigin: 'anonymous',
-            },
-            {
-              rel: 'stylesheet',
-              href: 'https://use.fontawesome.com/releases/v5.2.0/css/fontawesome.css',
-              integrity: 'sha384-HbmWTHay9psM8qyzEKPc8odH4DsOuzdejtnr+OFtDmOcIVnhgReQ4GZBH7uwcjf6',
-              crossOrigin: 'anonymous',
-            },
-            {
               rel: 'shortcut icon',
-              href: `${META_ASSETS_URL}favicon-v1.ico`,
+              href: `${HOST}${favicon}`,
             },
           ]}
-        />
+        >
+          <html lang={langKey} />
+        </Helmet>
         <Header siteTitle={data.site.siteMetadata.title} langs={langsMenu} />
         <div>
           {children()}
