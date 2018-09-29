@@ -32,10 +32,7 @@ const TemplateWrapper = ({
         <Helmet
           title={data.site.siteMetadata.title}
           meta={[
-            { charset: 'utf-8' },
-            { name: 'viewport', content: 'width=device-width, initial-scale=1, shrink-to-fit=no' },
             { name: 'theme-color', content: '#303030' },
-            { name: 'title', content: data.site.siteMetadata.title },
             { name: 'description', content: i18nMessages.meta.description },
             { name: 'keywords', content: i18nMessages.meta.keywords },
             { property: 'og:url', content: 'https://luanorlandi.github.io/' },
