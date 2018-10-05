@@ -1,4 +1,4 @@
-# Privacy Police
+# Privacy Policy
 
 I use Google Analytics and Hotjar as third party tracking services on Luan Orlandi website, but I don’t use them to track you individually or collect your User Personal Information.
 
