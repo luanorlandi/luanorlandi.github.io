@@ -1,6 +1,18 @@
 @import './fonts';
 @import './theme';
-@import '~bulma/bulma';
+@import '~bulma/sass/utilities/_all'; // sass-lint:disable-line clean-import-paths
+@import '~bulma/sass/base/_all'; // sass-lint:disable-line clean-import-paths
+@import '~bulma/sass/elements/container';
+@import '~bulma/sass/elements/content';
+@import '~bulma/sass/elements/icon';
+@import '~bulma/sass/elements/image';
+@import '~bulma/sass/elements/title';
+@import '~bulma/sass/elements/tag';
+@import '~bulma/sass/layout/section';
+@import '~bulma/sass/components/navbar';
+@import '~bulma/sass/components/card';
+@import '~bulma/sass/components/media';
+@import '~bulma/sass/grid/columns';
 @import './home';
 
 @import '../components/Header/Header';
