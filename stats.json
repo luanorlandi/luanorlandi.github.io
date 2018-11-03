@@ -5,12 +5,12 @@
       "path---pt-df284936d95afa95f2f6.js.map"
     ],
     "component---src-layouts-pt-js": [
-      "component---src-layouts-pt-js-74e7a1577a2ef18394d6.js",
-      "component---src-layouts-pt-js-74e7a1577a2ef18394d6.js.map"
+      "component---src-layouts-pt-js-a456d3a40d857fc14fad.js",
+      "component---src-layouts-pt-js-a456d3a40d857fc14fad.js.map"
     ],
     "component---src-layouts-en-js": [
-      "component---src-layouts-en-js-fdfcc726118523f8bbf4.js",
-      "component---src-layouts-en-js-fdfcc726118523f8bbf4.js.map"
+      "component---src-layouts-en-js-8145b72779cc27e906ab.js",
+      "component---src-layouts-en-js-8145b72779cc27e906ab.js.map"
     ],
     "component---src-pages-index-js": [
       "component---src-pages-index-js-52bb2af6a523981a1ac1.js",
@@ -29,8 +29,8 @@
       "path----b18fa01d97c027fc4d62.js.map"
     ],
     "component---src-pages-projects-pt-js": [
-      "component---src-pages-projects-pt-js-a1633b71ba6c79c600aa.js",
-      "component---src-pages-projects-pt-js-a1633b71ba6c79c600aa.js.map"
+      "component---src-pages-projects-pt-js-38ad98844e08feb2166e.js",
+      "component---src-pages-projects-pt-js-38ad98844e08feb2166e.js.map"
     ],
     "path---stack": [
       "path---stack-a764b8d5386061e3fa55.js",
@@ -73,8 +73,8 @@
       "component---src-pages-404-js-507fda4072151b895809.js.map"
     ],
     "commons": [
-      "commons-e9fb52132ac4a499020b.js",
-      "commons-e9fb52132ac4a499020b.js.map"
+      "commons-d8e1a775030ec22c6350.js",
+      "commons-d8e1a775030ec22c6350.js.map"
     ],
     "component---src-pages-index-en-js": [
       "component---src-pages-index-en-js-1af429938318606f4abb.js",
@@ -97,12 +97,12 @@
       "component---src-pages-posts-en-js-3069a885bd0774822d31.js.map"
     ],
     "component---src-pages-projects-en-js": [
-      "component---src-pages-projects-en-js-9a8ab11beb1846d63bb1.js",
-      "component---src-pages-projects-en-js-9a8ab11beb1846d63bb1.js.map"
+      "component---src-pages-projects-en-js-4c72443788446a29330f.js",
+      "component---src-pages-projects-en-js-4c72443788446a29330f.js.map"
     ],
     "component---src-pages-projects-js": [
-      "component---src-pages-projects-js-cefea94031eb888b2f09.js",
-      "component---src-pages-projects-js-cefea94031eb888b2f09.js.map"
+      "component---src-pages-projects-js-ed3fa3e3b8826780f6dd.js",
+      "component---src-pages-projects-js-ed3fa3e3b8826780f6dd.js.map"
     ],
     "app": [
       "app-dcbe29519da93c2027b7.js",
