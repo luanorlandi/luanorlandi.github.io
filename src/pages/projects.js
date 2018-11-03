@@ -5,40 +5,40 @@ import { injectIntl, FormattedMessage } from 'react-intl';
 
 import url, { externalLink } from 'constants/paths';
 import Card from 'components/Card';
-import projectImage1 from 'assets/tic-tac-porg.jpg';
-import projectImage2 from 'assets/memepool.jpg';
-import projectImage3 from 'assets/westworld-intro-creator.jpg';
-import projectImage4 from 'assets/swift-space-battle.png';
+import projectImage from 'assets/gatsby-course.jpg';
+import projectImage2 from 'assets/tic-tac-porg.jpg';
+import projectImage3 from 'assets/memepool.jpg';
+import projectImage4 from 'assets/westworld-intro-creator.jpg';
 
 const Projects = ({ intl }) => {
   const projectCards = [
     {
+      title: 'projects.gatsbyCourse.title',
+      subtitle: 'projects.gatsbyCourse.subtitle',
+      link: externalLink.gatsbycourse,
+      imageLink: projectImage,
+      tags: ['Gatsby', 'React'],
+    },
+    {
       title: 'projects.ticTacPorg.title',
       subtitle: 'projects.ticTacPorg.subtitle',
       link: externalLink.ticTacPorg,
-      imageLink: projectImage1,
+      imageLink: projectImage2,
       tags: ['React', 'PWA'],
     },
     {
       title: 'projects.memepool.title',
       subtitle: 'projects.memepool.subtitle',
       link: externalLink.memepool,
-      imageLink: projectImage2,
+      imageLink: projectImage3,
       tags: ['Node', 'Heroku'],
     },
     {
       title: 'projects.westworldIntroCreator.title',
       subtitle: 'projects.westworldIntroCreator.subtitle',
       link: externalLink.westworldIntroCreator,
-      imageLink: projectImage3,
-      tags: ['React'],
-    },
-    {
-      title: 'projects.swiftSpaceBattle.title',
-      subtitle: 'projects.swiftSpaceBattle.subtitle',
-      link: externalLink.swiftSpaceBattle,
       imageLink: projectImage4,
-      tags: ['Lua', 'MOAI'],
+      tags: ['React'],
     },
   ];
 
