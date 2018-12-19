@@ -1,0 +1,36 @@
+import common from './common';
+
+export default {
+  locale: 'pt',
+  messages: {
+    'meta.description': 'Desenvolvedor Front-end, criando apps e páginas Web',
+    'meta.keywords': 'React, Node, Gatsby, Front-end, desenvolvedor, API',
+    'home.title': 'Inicial',
+    'home.headline': 'Desenvolvedor Web',
+    'home.greet': `Olá, eu sou ${common.profileName}!`,
+    'home.about': `Sou desenvolvedor web, trabalho com Front-end criando aplicações e páginas Web.
+    Participo de eventos de tecnologia e gosto de estudar produtividade e comunicação, que me ajuda a manter organizado e colaborativo.`,
+    'home.experience': 'Desenvolvo projetos usando principalmente JavaScript com React e Node.',
+    'home.personalProjects': 'meus projetos pessoais',
+    'projects.title': 'Projetos',
+    'projects.description': 'Alguns dos meus projetos de destaque, veja mais no meu',
+    'projects.gatsbyCourse.title': 'Curso de Gatsby',
+    'projects.gatsbyCourse.subtitle': 'Crie seu site pessoal usando React',
+    'projects.ticTacPorg.title': 'Tic-tac-porg',
+    'projects.ticTacPorg.subtitle': 'Jogo da Velha com tema de Star Wars',
+    'projects.memepool.title': 'Memepool',
+    'projects.memepool.subtitle': 'Bot do Discord que toca sons de memes',
+    'projects.westworldIntroCreator.title': 'Westworld Intro Creator',
+    'projects.westworldIntroCreator.subtitle': 'Crie sua intro do Westworld personalizada',
+    'projects.stack': 'minha stack de ferramentas',
+    'stack.title': 'Stack',
+    'stack.description': 'Tenho experiências com diversas ferramentas e tecnologias modernas, que uso dependendo do projeto.',
+    'stack.stackShare': 'Compartilho minha stack no StackShare:',
+    'stack.posts': 'meus posts',
+    'posts.title': 'Posts',
+    'posts.learnReact.title': 'Learn React easily with this rule',
+    'posts.learnReact.subtitle': 'Make it fun',
+    checkOut: 'Veja',
+    ...common,
+  },
+};

@@ -1,21 +1,29 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Link from 'gatsby-link';
+import { Link } from 'gatsby';
+
+import generateUrl from 'constants/paths';
+import IntlContext from 'intl/IntlContext';
+import locales from 'intl/locales';
 
 const blockClass = 'language';
 
-const Language = ({ langs }) => (
-  <div className={blockClass}>
-    {langs.map(lang => (
-      <Link to={lang.link} className={`${blockClass}__link`} key={lang.langKey}>
-        {lang.langKey}
-      </Link>
-    ))}
-  </div>
+const Language = () => (
+  <IntlContext.Consumer>
+    {({ currentPage }) => (
+      <div className={blockClass}>
+        {locales.map(locale => (
+          <Link
+            className={`${blockClass}__link`}
+            to={generateUrl(currentPage, locale)}
+            key={locale}
+          >
+            {locale}
+          </Link>
+        ))}
+      </div>
+    )}
+  </IntlContext.Consumer>
 );
-
-Language.propTypes = {
-  langs: PropTypes.array.isRequired,
-};
 
 export default Language;

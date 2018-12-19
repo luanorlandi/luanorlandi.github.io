@@ -1,26 +1,27 @@
 {
-  "extends": "airbnb",
-  "parser": "babel-eslint",
-  "env": {
-    "browser": true
-  },
-  "settings": {
-    "import/core-modules": [
-      "react",
-      "prop-types"
-    ]
-  },
-  "globals": {
-    "graphql": true
-  },
-  "rules": {
-    "react/forbid-prop-types": 0,
-    "react/jsx-filename-extension": [
-      1, {
-        "extensions": [".js", ".jsx"]
-      }
-    ],
-    "import/no-unresolved": 0,
-    "react/jsx-key": 2
-  }
+    "extends": "airbnb",
+    "parser": "babel-eslint",
+    "settings": {
+        "import/resolver": {
+            "node": {
+              "paths": ["src"]
+            }
+        }
+    },
+    "rules": {
+        "max-len": [
+            "error",
+            {
+                "code": 80,
+                "ignoreUrls": true,
+                "ignoreStrings": true,
+                "ignoreTemplateLiterals": true
+            }
+        ],
+        "react/jsx-filename-extension": [
+            1, {
+                "extensions": [".js", ".jsx"]
+            }
+        ]
+    }
 }

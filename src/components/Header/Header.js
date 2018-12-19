@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import Link from 'gatsby-link';
+import { Link } from 'gatsby';
+import { FormattedMessage } from 'react-intl';
 
-import url from 'constants/paths';
+import IntlContext from 'intl/IntlContext';
+import generateUrl from 'constants/paths';
 import Language from 'components/Language';
-import { injectIntl, FormattedMessage } from 'react-intl';
 
 class Header extends Component {
   constructor(props) {
@@ -13,6 +14,8 @@ class Header extends Component {
       isMenuOpen: false,
     };
   }
+
+  static contextType = IntlContext;
 
   handleMenu = () => {
     this.setState(previousState => ({
@@ -23,25 +26,25 @@ class Header extends Component {
   closeMenu = () => this.setState({ isMenuOpen: false })
 
   render = () => {
-    const { siteTitle, intl, langs } = this.props;
+    const { siteTitle } = this.props;
     const { isMenuOpen } = this.state;
     const burguerClass = isMenuOpen ? 'is-active' : '';
     const navbarLinks = [
       {
         title: 'home.title',
-        link: url('home', intl.locale),
+        link: generateUrl('home', this.context.locale),
       },
       {
         title: 'projects.title',
-        link: url('projects', intl.locale),
+        link: generateUrl('projects', this.context.locale),
       },
       {
         title: 'stack.title',
-        link: url('stack', intl.locale),
+        link: generateUrl('stack', this.context.locale),
       },
       {
         title: 'posts.title',
-        link: url('posts', intl.locale),
+        link: generateUrl('posts', this.context.locale),
       },
     ];
 
@@ -75,7 +78,8 @@ class Header extends Component {
                   <FormattedMessage id={navbarLink.title} />
                 </Link>
               ))}
-              <Language langs={langs} />
+
+              <Language />
             </div>
           </div>
         </div>
@@ -86,12 +90,10 @@ class Header extends Component {
 
 Header.propTypes = {
   siteTitle: PropTypes.string,
-  langs: PropTypes.array.isRequired,
-  intl: PropTypes.object.isRequired,
 };
 
 Header.defaultProps = {
   siteTitle: '',
 };
 
-export default injectIntl(Header);
+export default Header;

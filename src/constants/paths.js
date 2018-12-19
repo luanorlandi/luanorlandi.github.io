@@ -1,5 +1,9 @@
 import get from 'lodash/get';
 
+import defaultLanguage from 'intl/data/defaultLanguage';
+
+const defaultLocale = defaultLanguage.locale;
+
 const paths = {
   home: '/',
   projects: '/projects',
@@ -19,12 +23,16 @@ export const externalLink = {
   swiftSpaceBattle: 'https://luanorlandi.github.io/Swift-Space-Battle/',
 };
 
-export default (pathName, languagePath) => {
+const generateUrl = (pathName, locale) => {
   const path = get(paths, pathName);
 
   if (!path) {
     throw new Error(`Path '${pathName}' not found`);
   }
 
+  const languagePath = locale !== defaultLocale ? locale : '';
+
   return languagePath ? `/${languagePath}${path}` : `${path}`;
 };
+
+export default generateUrl;
