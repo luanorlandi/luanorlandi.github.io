@@ -20,7 +20,7 @@ export const externalLink = {
   ticTacPorg: 'https://luanorlandi.github.io/tic-tac-porg',
   memepool: 'https://github.com/luanorlandi/memepool',
   westworldIntroCreator: 'https://westworldintrocreator.kassellabs.io/',
-  swiftSpaceBattle: 'https://luanorlandi.github.io/Swift-Space-Battle/',
+  learnReact: 'https://medium.com/@luanorlandi/learn-react-easily-with-this-rule-a715b818a358',
 };
 
 const generateUrl = (pathName, locale) => {

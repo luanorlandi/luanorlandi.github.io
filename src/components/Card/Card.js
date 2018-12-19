@@ -1,29 +1,26 @@
 import React from 'react';
-import { injectIntl, FormattedMessage } from 'react-intl';
+import Img from 'gatsby-image';
 
 const Card = ({
   title,
   subtitle,
   link,
-  imageLink,
+  image,
   tags,
-  intl,
 }) => (
   <a href={link}>
     <div className="card">
       <div className="card-content">
         <div className="media">
           <div className="media-left">
-            <figure className="image is-96x96">
-              <img src={imageLink} alt={intl.formatMessage({ id: title })} />
-            </figure>
+            {image()}
           </div>
           <div className="media-content">
-            <p className="title has-text-light is-size-5-desktop is-size-6-touch">
-              <FormattedMessage id={title} />
-            </p>
+            <h4 className="title has-text-light is-size-5-desktop is-size-6-touch">
+              {title}
+            </h4>
             <p className="subtitle has-text-light is-size-5-desktop is-size-6-touch">
-              <FormattedMessage id={subtitle} />
+              {subtitle}
             </p>
             <div className="tags">
               {tags.map(tag => (
@@ -39,4 +36,4 @@ const Card = ({
   </a>
 );
 
-export default injectIntl(Card);
+export default Card;

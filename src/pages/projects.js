@@ -5,44 +5,13 @@ import { FormattedMessage } from 'react-intl';
 import Layout from 'components/Layout';
 import SEO from 'components/Seo';
 import Card from 'components/Card';
+import GatsbyCourse from 'components/Images/GatsbyCourse';
+import TicTacPorg from 'components/Images/TicTacPorg';
+import Memepool from 'components/Images/Memepool';
+import WestworldIntroCreator from 'components/Images/WestworldIntroCreator';
 import IntlProvider from 'intl/IntlProvider';
 import IntlContext from 'intl/IntlContext';
 import generateUrl, { externalLink } from 'constants/paths';
-import projectImage from 'assets/images/gatsby-course.jpg';
-import projectImage2 from 'assets/images/tic-tac-porg.jpg';
-import projectImage3 from 'assets/images/memepool.jpg';
-import projectImage4 from 'assets/images/westworld-intro-creator.jpg';
-
-const projectCards = [
-  {
-    title: 'projects.gatsbyCourse.title',
-    subtitle: 'projects.gatsbyCourse.subtitle',
-    link: externalLink.gatsbycourse,
-    imageLink: projectImage,
-    tags: ['Gatsby', 'React'],
-  },
-  {
-    title: 'projects.ticTacPorg.title',
-    subtitle: 'projects.ticTacPorg.subtitle',
-    link: externalLink.ticTacPorg,
-    imageLink: projectImage2,
-    tags: ['React', 'PWA'],
-  },
-  {
-    title: 'projects.memepool.title',
-    subtitle: 'projects.memepool.subtitle',
-    link: externalLink.memepool,
-    imageLink: projectImage3,
-    tags: ['Node', 'Heroku'],
-  },
-  {
-    title: 'projects.westworldIntroCreator.title',
-    subtitle: 'projects.westworldIntroCreator.subtitle',
-    link: externalLink.westworldIntroCreator,
-    imageLink: projectImage4,
-    tags: ['React'],
-  },
-];
 
 const Projects = props => (
   <IntlProvider {...props} currentPage="projects">
@@ -75,9 +44,34 @@ const Projects = props => (
               </p>
               <div className="columns">
                 <div className="column is-half is-offset-one-quarter">
-                  {projectCards.map(projectCard => (
-                    <Card key={projectCard.title} {...projectCard} />
-                  ))}
+                  <Card
+                    title={formatMessage({ id: 'projects.gatsbyCourse.title' })}
+                    subtitle={formatMessage({ id: 'projects.gatsbyCourse.subtitle' })}
+                    link={externalLink.gatsbycourse}
+                    image={GatsbyCourse}
+                    tags={['Gatsby', 'React']}
+                  />
+                  <Card
+                    title={formatMessage({ id: 'projects.ticTacPorg.title' })}
+                    subtitle={formatMessage({ id: 'projects.ticTacPorg.subtitle' })}
+                    link={externalLink.ticTacPorg}
+                    image={TicTacPorg}
+                    tags={['React', 'PWA']}
+                  />
+                  <Card
+                    title={formatMessage({ id: 'projects.memepool.title' })}
+                    subtitle={formatMessage({ id: 'projects.memepool.subtitle' })}
+                    link={externalLink.gatsbycourse}
+                    image={Memepool}
+                    tags={['Node', 'Heroku']}
+                  />
+                  <Card
+                    title={formatMessage({ id: 'projects.westworldIntroCreator.title' })}
+                    subtitle={formatMessage({ id: 'projects.westworldIntroCreator.subtitle' })}
+                    link={externalLink.westworldIntroCreator}
+                    image={WestworldIntroCreator}
+                    tags={['Gatsby', 'React']}
+                  />
                 </div>
               </div>
               <p className="has-text-centered">

@@ -4,19 +4,10 @@ import { FormattedMessage } from 'react-intl';
 import Layout from 'components/Layout';
 import SEO from 'components/Seo';
 import Card from 'components/Card';
+import LearnReact from 'components/Images/LearnReact';
 import IntlProvider from 'intl/IntlProvider';
 import IntlContext from 'intl/IntlContext';
-import postImage from 'assets/images/learn-react.jpg';
-
-const projectCards = [
-  {
-    title: 'posts.learnReact.title',
-    subtitle: 'posts.learnReact.subtitle',
-    link: 'https://medium.com/@luanorlandi/learn-react-easily-with-this-rule-a715b818a358',
-    imageLink: postImage,
-    tags: ['React'],
-  },
-];
+import { externalLink } from 'constants/paths';
 
 const Posts = props => (
   <IntlProvider {...props} currentPage="posts">
@@ -37,9 +28,13 @@ const Posts = props => (
               <hr />
               <div className="columns">
                 <div className="column is-half is-offset-one-quarter">
-                  {projectCards.map(projectCard => (
-                    <Card key={projectCard.title} {...projectCard} />
-                  ))}
+                  <Card
+                    title={formatMessage({ id: 'posts.learnReact.title' })}
+                    subtitle={formatMessage({ id: 'posts.learnReact.subtitle' })}
+                    link={externalLink.learnReact}
+                    image={LearnReact}
+                    tags={['React']}
+                  />
                 </div>
               </div>
             </div>

@@ -13,16 +13,8 @@ import SEO from 'components/Seo';
 import IntlProvider from 'intl/IntlProvider';
 import IntlContext from 'intl/IntlContext';
 import generateUrl, { externalLink } from 'constants/paths';
-import profileImage from 'assets/images/profile.jpg';
 
 library.add(faGithub, faTwitter, faMedium, faLinkedin);
-
-const socialMedias = [
-  { icon: 'github', link: externalLink.github },
-  { icon: 'twitter', link: externalLink.twitter },
-  { icon: 'medium', link: externalLink.medium },
-  { icon: 'linkedin', link: externalLink.linkedin },
-];
 
 const Home = props => (
   <IntlProvider {...props} currentPage="home">
@@ -53,7 +45,7 @@ const Home = props => (
                     render={data => (
                       <Img
                         fixed={data.placeholderImage.childImageSharp.fixed}
-                        imgStyle={{"border-radius": "100%"}}
+                        imgStyle={{ borderRadius: '100%' }}
                         alt={formatMessage({ id: 'profileName' })}
                       />
                     )}
@@ -68,19 +60,38 @@ const Home = props => (
               </div>
             </div>
             <div className="has-text-centered is-mobile">
-              {socialMedias.map(socialMedia => (
-                <a
-                  href={socialMedia.link}
-                  aria-label={socialMedia.icon}
-                  key={socialMedia.icon}
-                >
-                  <span className="icon is-large">
-                    <FontAwesomeIcon className="fab fa-2x" icon={['fab', socialMedia.icon]}>
-                      asdads
-                    </FontAwesomeIcon>
-                  </span>
-                </a>
-              ))}
+              <a href={externalLink.github} aria-label="github">
+                <span className="icon is-large">
+                  <FontAwesomeIcon
+                    className="fab fa-2x"
+                    icon={['fab', 'github']}
+                  />
+                </span>
+              </a>
+              <a href={externalLink.github} aria-label="twitter">
+                <span className="icon is-large">
+                  <FontAwesomeIcon
+                    className="fab fa-2x"
+                    icon={['fab', 'twitter']}
+                  />
+                </span>
+              </a>
+              <a href={externalLink.github} aria-label="medium">
+                <span className="icon is-large">
+                  <FontAwesomeIcon
+                    className="fab fa-2x"
+                    icon={['fab', 'medium']}
+                  />
+                </span>
+              </a>
+              <a href={externalLink.github} aria-label="linkedin">
+                <span className="icon is-large">
+                  <FontAwesomeIcon
+                    className="fab fa-2x"
+                    icon={['fab', 'linkedin']}
+                  />
+                </span>
+              </a>
             </div>
           </div>
           <section className="section is-size-4-desktop is-size-5-touch">
