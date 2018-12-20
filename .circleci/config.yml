@@ -39,7 +39,7 @@ jobs:
             - node_modules
           key: v1-dependencies-{{ checksum "package.json" }}
 
-      - lint: yarn lint
+      - run: yarn lint
 
       - deploy:
           name: Deploy
