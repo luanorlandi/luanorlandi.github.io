@@ -1,3 +1,5 @@
+import common from './common';
+
 export default {
   locale: 'pt',
   messages: {
@@ -29,5 +31,6 @@ export default {
     'posts.learnReact.title': 'Learn React easily with this rule',
     'posts.learnReact.subtitle': 'Make it fun',
     checkOut: 'Veja',
+    ...common,
   },
 };
