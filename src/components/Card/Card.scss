@@ -3,6 +3,6 @@
   box-shadow: none;
 
   &:hover {
-    box-shadow: 0 0 1px 0 $card-box-shadow-color-hover;
+    background-color: $card-hover-color;
   }
 }

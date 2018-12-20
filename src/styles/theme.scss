@@ -31,7 +31,7 @@ $navbar-item-hover-background-color: $editor-unselected-tab;
 $navbar-burger-color: $navbar-item-color;
 
 $card-background-color: $editor-unselected-tab;
-$card-box-shadow-color-hover: $editor-foreground;
+$card-hover-color: rgba($editor-foreground, .15);
 $tag-color: $editor-foreground;
 $tag-background-color: $editor-menu-background;
 $tag-radius: 0;

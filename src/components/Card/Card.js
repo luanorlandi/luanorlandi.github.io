@@ -1,30 +1,26 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { injectIntl, FormattedMessage } from 'react-intl';
 
 const Card = ({
   title,
   subtitle,
   link,
-  imageLink,
+  image,
   tags,
-  intl,
 }) => (
   <a href={link}>
     <div className="card">
       <div className="card-content">
         <div className="media">
           <div className="media-left">
-            <figure className="image is-96x96">
-              <img src={imageLink} alt={intl.formatMessage({ id: title })} />
-            </figure>
+            {image()}
           </div>
           <div className="media-content">
-            <p className="title has-text-light is-size-5-desktop is-size-6-touch">
-              <FormattedMessage id={title} />
-            </p>
+            <h4 className="title has-text-light is-size-5-desktop is-size-6-touch">
+              {title}
+            </h4>
             <p className="subtitle has-text-light is-size-5-desktop is-size-6-touch">
-              <FormattedMessage id={subtitle} />
+              {subtitle}
             </p>
             <div className="tags">
               {tags.map(tag => (
@@ -40,4 +36,19 @@ const Card = ({
   </a>
 );
 
-export default injectIntl(Card);
+Card.propTypes = {
+  title: PropTypes.string,
+  subtitle: PropTypes.string,
+  link: PropTypes.string,
+  image: PropTypes.func.isRequired,
+  tags: PropTypes.arrayOf(PropTypes.string),
+};
+
+Card.defaultProps = {
+  title: '',
+  subtitle: '',
+  link: null,
+  tags: [],
+};
+
+export default Card;
