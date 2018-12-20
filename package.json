@@ -3,6 +3,17 @@
   "description": "Website of Luan Orlandi",
   "version": "2.0.0",
   "author": "Luan Orlandi <orlandi.luan@gmail.com>",
+  "keywords": [
+    "website, portfolio, luanorlandi, gatsby"
+  ],
+  "license": "MIT",
+  "scripts": {
+    "start": "gatsby develop",
+    "build": "gatsby build",
+    "lint": "yarn eslint && yarn sass-lint",
+    "eslint": "eslint src/",
+    "sass-lint": "sass-lint 'src/**/*.scss' -v --max-warnings 0"
+  },
   "dependencies": {
     "@fortawesome/fontawesome-free-brands": "^5.0.13",
     "@fortawesome/fontawesome-svg-core": "^1.2.10",
@@ -26,21 +37,13 @@
     "react-helmet": "^5.2.0",
     "react-intl": "^2.7.2"
   },
-  "keywords": [
-    "website, portfolio, luanorlandi, gatsby"
-  ],
-  "license": "MIT",
-  "scripts": {
-    "start": "gatsby develop",
-    "build": "gatsby build",
-    "lint": "eslint \"src/**/*.js\""
-  },
   "devDependencies": {
     "eslint": "^5.10.0",
     "eslint-config-airbnb": "^17.1.0",
     "eslint-plugin-import": "^2.14.0",
     "eslint-plugin-jsx-a11y": "^6.1.2",
-    "eslint-plugin-react": "^7.11.1"
+    "eslint-plugin-react": "^7.11.1",
+    "sass-lint": "^1.12.1"
   },
   "repository": {
     "type": "git",
