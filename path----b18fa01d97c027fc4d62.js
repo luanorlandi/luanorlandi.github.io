@@ -1,2 +1,0 @@
-webpackJsonp([60335399758886],{381:function(t,a){t.exports={data:{site:{siteMetadata:{title:"Luan Orlandi",languages:{defaultLangKey:"en",langs:["en","pt"]}}}},layoutContext:{}}},382:function(t,a){t.exports={data:{site:{siteMetadata:{title:"Luan Orlandi",languages:{defaultLangKey:"en",langs:["en","pt"]}}}},layoutContext:{}}}});
-//# sourceMappingURL=path----b18fa01d97c027fc4d62.js.map
