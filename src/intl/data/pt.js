@@ -1,5 +1,3 @@
-import common from './common';
-
 export default {
   locale: 'pt',
   messages: {
@@ -7,7 +5,7 @@ export default {
     'meta.keywords': 'React, Node, Gatsby, Front-end, desenvolvedor, API',
     'home.title': 'Inicial',
     'home.headline': 'Desenvolvedor Web',
-    'home.greet': `Olá, eu sou ${common.profileName}!`,
+    'home.greet': 'Olá, eu sou Luan Orlandi!',
     'home.about': `Sou desenvolvedor web, trabalho com Front-end criando aplicações e páginas Web.
     Participo de eventos de tecnologia e gosto de estudar produtividade e comunicação, que me ajuda a manter organizado e colaborativo.`,
     'home.experience': 'Desenvolvo projetos usando principalmente JavaScript com React e Node.',
@@ -31,6 +29,5 @@ export default {
     'posts.learnReact.title': 'Learn React easily with this rule',
     'posts.learnReact.subtitle': 'Make it fun',
     checkOut: 'Veja',
-    ...common,
   },
 };

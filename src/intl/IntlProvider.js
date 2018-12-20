@@ -14,8 +14,8 @@ class IntlProvider extends Component {
   constructor(props) {
     super(props);
 
-    const { locale, messages } = this.props.intl;
-    const { currentPage } = this.props;
+    const { intl, currentPage } = this.props;
+    const { locale, messages } = intl;
 
     this.state = {
       locale,
@@ -28,23 +28,28 @@ class IntlProvider extends Component {
     this.setState({ locale });
   }
 
-  render = () => (
-    <Provider {...this.state}>
-      <IntlConsumer>
-        {intl => (
-          <IntlContext.Provider
-            value={{
-              ...intl,
-              currentPage: this.state.currentPage,
-              changeLocale: this.changeLocale,
-            }}
-          >
-            {this.props.children}
-          </IntlContext.Provider>
-        )}
-      </IntlConsumer>
-    </Provider>
-  );
+  render = () => {
+    const { currentPage } = this.state;
+    const { children } = this.props;
+
+    return (
+      <Provider {...this.state}>
+        <IntlConsumer>
+          {intl => (
+            <IntlContext.Provider
+              value={{
+                ...intl,
+                currentPage,
+                changeLocale: this.changeLocale,
+              }}
+            >
+              {children}
+            </IntlContext.Provider>
+          )}
+        </IntlConsumer>
+      </Provider>
+    );
+  }
 }
 
 IntlProvider.propTypes = {

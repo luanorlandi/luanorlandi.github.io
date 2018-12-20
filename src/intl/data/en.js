@@ -1,5 +1,3 @@
-import common from './common';
-
 export default {
   locale: 'en',
   messages: {
@@ -7,7 +5,7 @@ export default {
     'meta.keywords': 'React, Node, Gatsby, Front-end, developer, API',
     'home.title': 'Home',
     'home.headline': 'Web Developer',
-    'home.greet': `Hello, I am ${common.profileName}!`,
+    'home.greet': 'Hello, I am Luan Orlandi!',
     'home.about': `I'm a Web Developer, I work with Front-end creating apps and web pages.
     I participate in events about technology and I like to study productivity and communication, it helps me stay organized and collaborative.`,
     'home.experience': 'I develop projects mostly with JavaScript using React and Node.',
@@ -31,6 +29,5 @@ export default {
     'posts.learnReact.title': 'Learn React easily with this rule',
     'posts.learnReact.subtitle': 'Make it fun',
     checkOut: 'Check out my',
-    ...common,
   },
 };
