@@ -7,6 +7,17 @@ import ogImage from 'assets/images/luanorlandi.jpg';
 
 const HOST = process.env.NODE_ENV === 'production' ? 'https://luanorlandi.github.io' : '';
 
+const detailsQuery = graphql`
+  query DefaultSEOQuery {
+    site {
+      siteMetadata {
+        title
+        author
+      }
+    }
+  }
+`;
+
 const SEO = ({
   description,
   lang,
@@ -45,7 +56,7 @@ const SEO = ({
 
 SEO.propTypes = {
   title: PropTypes.string,
-  description: PropTypes.string.isRequired,
+  description: PropTypes.string,
   lang: PropTypes.string.isRequired,
   keywords: PropTypes.string,
   meta: PropTypes.arrayOf(PropTypes.object),
@@ -53,19 +64,9 @@ SEO.propTypes = {
 
 SEO.defaultProps = {
   title: null,
+  description: '',
   meta: [],
-  keywords: [],
+  keywords: '',
 };
 
 export default SEO;
-
-const detailsQuery = graphql`
-  query DefaultSEOQuery {
-    site {
-      siteMetadata {
-        title
-        author
-      }
-    }
-  }
-`;

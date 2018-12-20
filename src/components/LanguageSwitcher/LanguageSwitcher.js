@@ -1,20 +1,17 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { Link } from 'gatsby';
 
 import generateUrl from 'constants/paths';
 import IntlContext from 'intl/IntlContext';
 import locales from 'intl/locales';
 
-const blockClass = 'language';
-
-const Language = () => (
+const LanguageSwitcher = () => (
   <IntlContext.Consumer>
     {({ currentPage }) => (
-      <div className={blockClass}>
+      <div className="language">
         {locales.map(locale => (
           <Link
-            className={`${blockClass}__link`}
+            className="language__link"
             to={generateUrl(currentPage, locale)}
             key={locale}
           >
@@ -26,4 +23,4 @@ const Language = () => (
   </IntlContext.Consumer>
 );
 
-export default Language;
+export default LanguageSwitcher;

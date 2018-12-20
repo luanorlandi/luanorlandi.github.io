@@ -1,5 +1,5 @@
 import React from 'react';
-import Img from 'gatsby-image';
+import PropTypes from 'prop-types';
 
 const Card = ({
   title,
@@ -35,5 +35,20 @@ const Card = ({
     </div>
   </a>
 );
+
+Card.propTypes = {
+  title: PropTypes.string,
+  subtitle: PropTypes.string,
+  link: PropTypes.string,
+  image: PropTypes.func.isRequired,
+  tags: PropTypes.arrayOf(PropTypes.string),
+};
+
+Card.defaultProps = {
+  title: '',
+  subtitle: '',
+  link: null,
+  tags: [],
+};
 
 export default Card;

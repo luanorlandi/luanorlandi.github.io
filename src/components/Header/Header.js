@@ -5,7 +5,7 @@ import { FormattedMessage } from 'react-intl';
 
 import IntlContext from 'intl/IntlContext';
 import generateUrl from 'constants/paths';
-import Language from 'components/Language';
+import LanguageSwitcher from 'components/LanguageSwitcher';
 
 class Header extends Component {
   state = {
@@ -76,7 +76,7 @@ class Header extends Component {
               >
                 <FormattedMessage id="posts.title" />
               </Link>
-              <Language />
+              <LanguageSwitcher />
             </div>
           </div>
         </div>

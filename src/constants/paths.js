@@ -9,6 +9,7 @@ const paths = {
   projects: '/projects',
   stack: '/stack',
   posts: '/posts',
+  404: '/404',
 };
 
 export const externalLink = {
@@ -16,7 +17,7 @@ export const externalLink = {
   twitter: 'https://twitter.com/luanorlandi',
   medium: 'https://medium.com/@luanorlandi',
   linkedin: 'https://www.linkedin.com/in/luanorlandi/',
-  gatsbycourse: 'https://www.udemy.com/gatsby-crie-seu-site-pessoal',
+  gatsbyCourse: 'https://www.udemy.com/gatsby-crie-seu-site-pessoal',
   ticTacPorg: 'https://luanorlandi.github.io/tic-tac-porg',
   memepool: 'https://github.com/luanorlandi/memepool',
   westworldIntroCreator: 'https://westworldintrocreator.kassellabs.io/',
