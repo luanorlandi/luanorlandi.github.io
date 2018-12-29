@@ -18,8 +18,8 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-manifest',
       options: {
-        name: 'gatsby-starter-default',
-        short_name: 'starter',
+        name: 'Luan Orlandi',
+        short_name: 'Luan Orlandi',
         start_url: '/',
         background_color: '#303030',
         theme_color: '#303030',
