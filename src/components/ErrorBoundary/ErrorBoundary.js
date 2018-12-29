@@ -1,18 +1,17 @@
-import React, { Component } from 'react';
+import React from 'react';
 import * as Sentry from '@sentry/browser';
 
 Sentry.init({
   dsn: 'https://84e73d8de95a48e7a217b43730d95a20@sentry.io/1308672',
+  environment: process.env.NODE_ENV,
 });
 
-class ErrorBoundary extends Component {
-  constructor(props) {
-    super(props);
-    this.state = { error: null };
-  }
-
+class ErrorBoundary extends React.Component {
   componentDidCatch(error, errorInfo) {
-    this.setState({ error });
+    if (process.env.NODE_ENV === 'development') {
+      return;
+    }
+
     Sentry.withScope((scope) => {
       Object.keys(errorInfo).forEach((key) => {
         scope.setExtra(key, errorInfo[key]);
@@ -22,15 +21,8 @@ class ErrorBoundary extends Component {
   }
 
   render() {
-    const { error } = this.state;
     // eslint-disable-next-line
     const { children } = this.props;
-    if (error) {
-      return (
-        // eslint-disable-next-line
-        <a onClick={() => Sentry.showReportDialog()}>Report feedback</a>
-      );
-    }
     return children;
   }
 }
