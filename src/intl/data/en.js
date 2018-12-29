@@ -31,6 +31,7 @@ export default {
     'posts.learnReact.title': 'Learn React easily with this rule',
     'posts.learnReact.subtitle': 'Make it fun',
     checkOut: 'Check out my',
+    noscript: 'This website works better with JavaScript enabled',
     ...common,
   },
 };
