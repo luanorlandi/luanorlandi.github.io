@@ -55,7 +55,7 @@ const Home = props => (
                   <FormattedMessage id="profileName" />
                 </h1>
                 <h2 className="subtitle has-text-centered has-text-warning">
-                  <FormattedMessage id="home.hedline" />
+                  <FormattedMessage id="home.headline" />
                 </h2>
               </div>
             </div>
