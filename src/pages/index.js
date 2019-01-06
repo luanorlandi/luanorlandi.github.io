@@ -68,7 +68,7 @@ const Home = props => (
                   />
                 </span>
               </a>
-              <a href={externalLink.github} aria-label="twitter">
+              <a href={externalLink.twitter} aria-label="twitter">
                 <span className="icon is-large">
                   <FontAwesomeIcon
                     className="fab fa-2x"
@@ -76,7 +76,7 @@ const Home = props => (
                   />
                 </span>
               </a>
-              <a href={externalLink.github} aria-label="medium">
+              <a href={externalLink.medium} aria-label="medium">
                 <span className="icon is-large">
                   <FontAwesomeIcon
                     className="fab fa-2x"
@@ -84,7 +84,7 @@ const Home = props => (
                   />
                 </span>
               </a>
-              <a href={externalLink.github} aria-label="linkedin">
+              <a href={externalLink.linkedin} aria-label="linkedin">
                 <span className="icon is-large">
                   <FontAwesomeIcon
                     className="fab fa-2x"
