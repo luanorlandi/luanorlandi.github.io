@@ -24,7 +24,7 @@ export default {
     'projects.westworldIntroCreator.subtitle': 'Create your own Westworld opening',
     'projects.stack': 'stack',
     'stack.title': 'Stack',
-    'stack.description': 'I have experience with many modern tools, I select them for my projects depending on the scenario.',
+    'stack.description': 'I have experience with many modern tools, I select them for my projects depending on the usage.',
     'stack.stackShare': 'Here is my stack on StackShare:',
     'stack.posts': 'posts',
     'posts.title': 'Posts',
