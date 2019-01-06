@@ -70,7 +70,7 @@ const Projects = props => (
                     subtitle={formatMessage({ id: 'projects.westworldIntroCreator.subtitle' })}
                     link={externalLink.westworldIntroCreator}
                     image={WestworldIntroCreator}
-                    tags={['Gatsby', 'React']}
+                    tags={['React']}
                   />
                 </div>
               </div>
