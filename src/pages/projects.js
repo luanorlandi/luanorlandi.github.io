@@ -61,7 +61,7 @@ const Projects = props => (
                   <Card
                     title={formatMessage({ id: 'projects.memepool.title' })}
                     subtitle={formatMessage({ id: 'projects.memepool.subtitle' })}
-                    link={externalLink.gatsbycourse}
+                    link={externalLink.memepool}
                     image={Memepool}
                     tags={['Node', 'Heroku']}
                   />
