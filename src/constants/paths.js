@@ -18,9 +18,10 @@ export const externalLink = {
   medium: 'https://medium.com/@luanorlandi',
   linkedin: 'https://www.linkedin.com/in/luanorlandi/',
   gatsbyCourse: 'https://www.udemy.com/gatsby-crie-seu-site-pessoal',
+  kasselLabs: 'https://kassellabs.io',
   ticTacPorg: 'https://luanorlandi.github.io/tic-tac-porg',
-  memepool: 'https://github.com/luanorlandi/memepool',
-  westworldIntroCreator: 'https://westworldintrocreator.kassellabs.io/',
+  slackParrot: 'https://www.npmjs.com/package/slack-parrot',
+  gatsbyBlazingFast: 'https://medium.freecodecamp.org/how-gatsby-is-so-blazing-fast-c99a6f2d405e',
   learnReact: 'https://medium.com/@luanorlandi/learn-react-easily-with-this-rule-a715b818a358',
 };
 

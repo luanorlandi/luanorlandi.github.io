@@ -5,28 +5,26 @@ const Card = ({
   title,
   subtitle,
   link,
-  image,
   tags,
+  image,
 }) => (
   <a href={link}>
     <div className="card">
       <div className="card-content">
         <div className="media">
           <div className="media-left">
-            {image()}
+            {image}
           </div>
           <div className="media-content">
-            <h4 className="title has-text-light is-size-5-desktop is-size-6-touch">
+            <h4 className="title is-size-5-desktop is-size-6-touch has-text-light">
               {title}
             </h4>
-            <p className="subtitle has-text-light is-size-5-desktop is-size-6-touch">
+            <p className="subtitle is-size-5-desktop is-size-6-touch has-text-light">
               {subtitle}
             </p>
             <div className="tags">
               {tags.map(tag => (
-                <span className="tag" key={tag}>
-                  {tag}
-                </span>
+                <span className="tag" key={tag}>{tag}</span>
               ))}
             </div>
           </div>
@@ -37,18 +35,17 @@ const Card = ({
 );
 
 Card.propTypes = {
-  title: PropTypes.string,
-  subtitle: PropTypes.string,
+  title: PropTypes.string.isRequired,
+  subtitle: PropTypes.string.isRequired,
   link: PropTypes.string,
-  image: PropTypes.func.isRequired,
   tags: PropTypes.arrayOf(PropTypes.string),
+  image: PropTypes.node,
 };
 
 Card.defaultProps = {
-  title: '',
-  subtitle: '',
   link: null,
   tags: [],
+  image: null,
 };
 
 export default Card;

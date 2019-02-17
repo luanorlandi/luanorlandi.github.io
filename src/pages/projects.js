@@ -1,17 +1,47 @@
 import React from 'react';
-import { Link } from 'gatsby';
+import { Link, StaticQuery, graphql } from 'gatsby';
 import { FormattedMessage } from 'react-intl';
+import Img from 'gatsby-image';
 
 import Layout from 'components/Layout';
 import SEO from 'components/Seo';
 import Card from 'components/Card';
-import GatsbyCourse from 'components/Images/GatsbyCourse';
-import TicTacPorg from 'components/Images/TicTacPorg';
-import Memepool from 'components/Images/Memepool';
-import WestworldIntroCreator from 'components/Images/WestworldIntroCreator';
 import IntlProvider from 'intl/IntlProvider';
 import IntlContext from 'intl/IntlContext';
 import generateUrl, { externalLink } from 'constants/paths';
+
+const queryImage = graphql`
+  query {
+    propject1: file(relativePath: { eq: "gatsby-course.jpg" }) {
+      childImageSharp {
+        fixed(width: 96, height: 96) {
+          ...GatsbyImageSharpFixed
+        }
+      }
+    }
+    project2: file(relativePath: { eq: "kassel-labs.png" }) {
+      childImageSharp {
+        fixed(width: 96, height: 96) {
+          ...GatsbyImageSharpFixed
+        }
+      }
+    }
+    project3: file(relativePath: { eq: "tic-tac-porg.png" }) {
+      childImageSharp {
+        fixed(width: 96, height: 96) {
+          ...GatsbyImageSharpFixed
+        }
+      }
+    }
+    project4: file(relativePath: { eq: "slack-parrot.png" }) {
+      childImageSharp {
+        fixed(width: 96, height: 96) {
+          ...GatsbyImageSharpFixed
+        }
+      }
+    }
+  }
+`;
 
 const Projects = props => (
   <IntlProvider {...props} currentPage="projects">
@@ -44,33 +74,40 @@ const Projects = props => (
               </p>
               <div className="columns">
                 <div className="column is-half is-offset-one-quarter">
-                  <Card
-                    title={formatMessage({ id: 'projects.gatsbyCourse.title' })}
-                    subtitle={formatMessage({ id: 'projects.gatsbyCourse.subtitle' })}
-                    link={externalLink.gatsbycourse}
-                    image={GatsbyCourse}
-                    tags={['Gatsby', 'React']}
-                  />
-                  <Card
-                    title={formatMessage({ id: 'projects.ticTacPorg.title' })}
-                    subtitle={formatMessage({ id: 'projects.ticTacPorg.subtitle' })}
-                    link={externalLink.ticTacPorg}
-                    image={TicTacPorg}
-                    tags={['React', 'PWA']}
-                  />
-                  <Card
-                    title={formatMessage({ id: 'projects.memepool.title' })}
-                    subtitle={formatMessage({ id: 'projects.memepool.subtitle' })}
-                    link={externalLink.memepool}
-                    image={Memepool}
-                    tags={['Node', 'Heroku']}
-                  />
-                  <Card
-                    title={formatMessage({ id: 'projects.westworldIntroCreator.title' })}
-                    subtitle={formatMessage({ id: 'projects.westworldIntroCreator.subtitle' })}
-                    link={externalLink.westworldIntroCreator}
-                    image={WestworldIntroCreator}
-                    tags={['React']}
+                  <StaticQuery
+                    query={queryImage}
+                    render={data => (
+                      <>
+                        <Card
+                          title={formatMessage({ id: 'projects.gatsbyCourse.title' })}
+                          subtitle={formatMessage({ id: 'projects.gatsbyCourse.subtitle' })}
+                          link={externalLink.gatsbycourse}
+                          tags={['Gatsby', 'React']}
+                          image={<Img fixed={data.propject1.childImageSharp.fixed} alt={formatMessage({ id: 'projects.gatsbyCourse.imageAlt' })} />}
+                        />
+                        <Card
+                          title={formatMessage({ id: 'projects.kasselLabs.title' })}
+                          subtitle={formatMessage({ id: 'projects.kasselLabs.subtitle' })}
+                          link={externalLink.kasselLabs}
+                          tags={['React']}
+                          image={<Img fixed={data.project2.childImageSharp.fixed} alt={formatMessage({ id: 'projects.kasselLabs.imageAlt' })} />}
+                        />
+                        <Card
+                          title={formatMessage({ id: 'projects.ticTacPorg.title' })}
+                          subtitle={formatMessage({ id: 'projects.ticTacPorg.subtitle' })}
+                          link={externalLink.ticTacPorg}
+                          tags={['React', 'PWA']}
+                          image={<Img fixed={data.project3.childImageSharp.fixed} alt={formatMessage({ id: 'projects.ticTacPorg.imageAlt' })} />}
+                        />
+                        <Card
+                          title={formatMessage({ id: 'projects.slackParrot.title' })}
+                          subtitle={formatMessage({ id: 'projects.slackParrot.subtitle' })}
+                          link={externalLink.slackParrot}
+                          tags={['Node']}
+                          image={<Img fixed={data.project4.childImageSharp.fixed} alt={formatMessage({ id: 'projects.slackParrot.imageAlt' })} />}
+                        />
+                      </>
+                    )}
                   />
                 </div>
               </div>
