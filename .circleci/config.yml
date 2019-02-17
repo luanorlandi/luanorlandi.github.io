@@ -23,6 +23,10 @@ jobs:
       - TARGET_BRANCH: master
 
     steps:
+      - add_ssh_keys:
+          fingerprints:
+            - "e9:9a:35:03:08:50:a9:ff:0b:33:6a:7d:fd:ce:b5:1e"
+
       - checkout
 
       # Download and cache dependencies
