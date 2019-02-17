@@ -29,8 +29,8 @@ const queryImage = graphql`
   }
 `;
 
-const Posts = props => (
-  <IntlProvider {...props} currentPage="posts">
+const Blog = props => (
+  <IntlProvider {...props} currentPage="blog">
     <IntlContext.Consumer>
       {({ locale, formatMessage }) => (
         <Layout>
@@ -79,4 +79,4 @@ const Posts = props => (
   </IntlProvider>
 );
 
-export default Posts;
+export default Blog;

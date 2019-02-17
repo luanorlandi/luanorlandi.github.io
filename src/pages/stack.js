@@ -7,6 +7,7 @@ import Layout from 'components/Layout';
 import SEO from 'components/Seo';
 import IntlProvider from 'intl/IntlProvider';
 import IntlContext from 'intl/IntlContext';
+import generateUrl from 'constants/paths';
 
 const Stack = props => (
   <IntlProvider {...props} currentPage="stack">
@@ -54,7 +55,7 @@ const Stack = props => (
               <p className="has-text-centered">
                 <FormattedMessage id="checkOut" />
                 {' '}
-                <Link to="/posts">
+                <Link to={generateUrl('blog', locale)}>
                   <FormattedMessage id="stack.posts" />
                 </Link>
                 {'.'}

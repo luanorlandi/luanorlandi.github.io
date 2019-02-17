@@ -8,7 +8,7 @@ const paths = {
   home: '/',
   projects: '/projects',
   stack: '/stack',
-  posts: '/posts',
+  blog: '/blog',
   404: '/404',
 };
 

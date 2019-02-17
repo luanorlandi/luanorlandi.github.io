@@ -71,7 +71,7 @@ class Header extends Component {
               </Link>
               <Link
                 className="navbar-item is-size-5"
-                to={generateUrl('posts', locale)}
+                to={generateUrl('blog', locale)}
                 onClick={this.closeMenu}
               >
                 <FormattedMessage id="posts.title" />
