@@ -2,7 +2,7 @@ import React from 'react';
 import * as Sentry from '@sentry/browser';
 
 Sentry.init({
-  dsn: 'https://84e73d8de95a48e7a217b43730d95a20@sentry.io/1308672',
+  dsn: process.env.SENTRY_DSN_LUAN_ORLANDI,
   environment: process.env.NODE_ENV,
 });
 
