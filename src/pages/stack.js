@@ -40,7 +40,7 @@ const Stack = props => (
                 <FormattedMessage id="stack.stackShare" />
               </p>
               <div className="columns">
-                <div className="column is-half is-offset-one-quarter">
+                <div className="column is-half is-offset-one-quarter stackshare">
                   <a
                     frameBorder="0"
                     data-theme="dark"
