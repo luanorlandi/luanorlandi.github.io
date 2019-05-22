@@ -26,7 +26,7 @@ class Header extends Component {
     const { locale } = this.context;
     const { siteTitle } = this.props;
     const { isMenuOpen } = this.state;
-    const burguerClass = isMenuOpen ? 'is-active' : '';
+    const burgerClass = isMenuOpen ? 'is-active' : '';
 
     return (
       <nav className="navbar">
@@ -36,7 +36,7 @@ class Header extends Component {
               {siteTitle}
             </Link>
             <button
-              className={`navbar-burger has-text-light ${burguerClass}`}
+              className={`navbar-burger has-text-light ${burgerClass}`}
               type="button"
               aria-label="menu"
               onClick={this.handleMenu}
@@ -46,7 +46,7 @@ class Header extends Component {
               <span aria-hidden="true" />
             </button>
           </div>
-          <div className={`navbar-menu ${burguerClass}`}>
+          <div className={`navbar-menu ${burgerClass}`}>
             <div className="navbar-end">
               <Link
                 className="navbar-item is-size-5"
