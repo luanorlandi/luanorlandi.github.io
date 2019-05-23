@@ -10,6 +10,7 @@
   "scripts": {
     "start": "gatsby develop",
     "build": "gatsby build",
+    "serve": "gatsby serve",
     "lint": "yarn eslint && yarn sass-lint",
     "eslint": "eslint src/",
     "sass-lint": "sass-lint 'src/**/*.scss' -v --max-warnings 0"
@@ -18,6 +19,7 @@
     "@fortawesome/fontawesome-free-brands": "^5.0.13",
     "@fortawesome/fontawesome-svg-core": "^1.2.18",
     "@fortawesome/react-fontawesome": "^0.1.4",
+    "@reach/router": "^1.2.1",
     "@sentry/browser": "^5.2.1",
     "bulma": "^0.7.5",
     "gatsby": "^2.5.5",

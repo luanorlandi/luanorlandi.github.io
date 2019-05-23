@@ -1,10 +1,19 @@
-import React from 'react';
+import React, { useEffect, useContext } from 'react';
 
-import Projects from 'pages/projects'; // eslint-disable-line
-import pt from 'intl/data/pt';
+import Projects from 'pages/projects';
+import pt from 'contexts/intl/data/pt';
+import IntlContext from 'contexts/intl/IntlContext';
 
-const ProjectsPt = props => (
-  <Projects intl={pt} {...props} />
-);
+const ProjectsPt = (props) => {
+  const intl = useContext(IntlContext);
+
+  useEffect(() => {
+    intl.changeLanguage(pt);
+  }, []);
+
+  return (
+    <Projects {...props} />
+  );
+};
 
 export default ProjectsPt;
