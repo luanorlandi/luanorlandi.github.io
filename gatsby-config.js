@@ -39,5 +39,13 @@ module.exports = {
       },
     },
     'gatsby-plugin-sitemap',
+    {
+      resolve: 'gatsby-mdx',
+      options: {
+        defaultLayouts: {
+          default: require.resolve('./src/templates/Post'),
+        },
+      },
+    },
   ],
 };
