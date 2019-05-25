@@ -5,6 +5,8 @@ import IntlContext from 'contexts/intl/IntlContext';
 import Layout from 'components/Layout';
 import SEO from 'components/Seo';
 
+import './Post.scss';
+
 const Post = ({
   children,
   pageContext: {
@@ -12,6 +14,7 @@ const Post = ({
       title,
       description,
       keywords,
+      date,
     },
   },
 }) => {
@@ -25,13 +28,20 @@ const Post = ({
         description={description}
         keywords={keywords}
       />
-      <section className="section is-size-4-desktop is-size-5-touch">
-        <div className="container content">
-          <h1 className="title has-text-centered has-text-light">{title}</h1>
-          <hr />
-          {children}
+      <div className="section is-size-4-desktop is-size-5-touch">
+        <div className="container content post__container">
+          <main>
+            <article>
+              <header>
+                <h1 className="title has-text-centered has-text-light">{title}</h1>
+              </header>
+              <hr />
+              <p className="post__date">{intl.formatDate(date)}</p>
+              {children}
+            </article>
+          </main>
         </div>
-      </section>
+      </div>
     </Layout>
   );
 };
@@ -43,6 +53,7 @@ Post.propTypes = {
       title: PropTypes.string.required,
       description: PropTypes.string,
       keywords: PropTypes.string,
+      date: PropTypes.string,
     }),
   }),
 };
