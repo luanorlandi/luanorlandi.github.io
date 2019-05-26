@@ -36,7 +36,7 @@ const Post = ({
                 <h1 className="title has-text-centered has-text-light">{title}</h1>
               </header>
               <hr />
-              <p className="post__date">{intl.formatDate(date)}</p>
+              <p className="post__date">{intl.formatDate(date, { year: 'numeric', month: 'long', day: 'numeric' })}</p>
               {children}
             </article>
           </main>
