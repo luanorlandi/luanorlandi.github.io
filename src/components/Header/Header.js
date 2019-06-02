@@ -68,8 +68,6 @@ const Header = ({ siteTitle }) => {
   );
 };
 
-Header.contextType = IntlContext;
-
 Header.propTypes = {
   siteTitle: PropTypes.string,
 };
