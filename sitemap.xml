@@ -3,9 +3,12 @@
 <url> <loc>https://luanorlandi.github.io/blog/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://luanorlandi.github.io/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://luanorlandi.github.io/projects/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://luanorlandi.github.io/pt/404/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://luanorlandi.github.io/pt/blog/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://luanorlandi.github.io/pt/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://luanorlandi.github.io/pt/projects/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://luanorlandi.github.io/pt/stack/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://luanorlandi.github.io/stack/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://luanorlandi.github.io/post/learn-react-easily-with-this-rule/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://luanorlandi.github.io/pt/post/learn-react-easily-with-this-rule/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 </urlset>
