@@ -5,8 +5,8 @@ import en from 'react-intl/locale-data/en';
 import pt from 'react-intl/locale-data/pt';
 import get from 'lodash/get';
 
-import defaultLanguage from 'contexts/intl/data/defaultLanguage';
 import { paths } from 'constants/paths';
+import { languagesObject, locales, defaultLanguage } from './data/languages';
 import IntlConsumer from './IntlConsumer';
 
 addLocaleData([...en, ...pt]);
@@ -15,9 +15,23 @@ const defaultLocale = defaultLanguage.locale;
 
 const IntlContext = createContext({});
 
-export const IntlComponent = ({ children }) => {
-  const [locale, setLocale] = useState(defaultLanguage.locale);
-  const [messages, setMessages] = useState(defaultLanguage.messages);
+const getLanguage = (pathname) => {
+  const localeRegex = /^\/[a-zA-z-]*/;
+
+  const locale = pathname.match(localeRegex)[0].replace('/', '');
+
+  if (locales.includes(locale)) {
+    return languagesObject[locale];
+  }
+
+  return defaultLanguage;
+};
+
+export const IntlProvider = ({ children, pathname }) => {
+  const initialLanguage = getLanguage(pathname);
+
+  const [locale, setLocale] = useState(initialLanguage.locale);
+  const [messages, setMessages] = useState(initialLanguage.messages);
 
   const changeLanguage = (language) => {
     setLocale(language.locale);
@@ -41,7 +55,7 @@ export const IntlComponent = ({ children }) => {
       <IntlConsumer>
         {intl => (
           <IntlContext.Provider value={{ ...intl, changeLanguage, getPath }}>
-            {children}
+            {children({ ...intl, changeLanguage, getPath })}
           </IntlContext.Provider>
         )}
       </IntlConsumer>
@@ -49,12 +63,9 @@ export const IntlComponent = ({ children }) => {
   );
 };
 
-IntlComponent.propTypes = {
-  children: PropTypes.node,
-};
-
-IntlComponent.defaultProps = {
-  children: null,
+IntlProvider.propTypes = {
+  children: PropTypes.func.isRequired,
+  pathname: PropTypes.string.isRequired,
 };
 
 export default IntlContext;

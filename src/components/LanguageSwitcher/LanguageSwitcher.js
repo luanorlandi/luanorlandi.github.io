@@ -3,8 +3,7 @@ import { Link } from 'gatsby';
 import { Location } from '@reach/router';
 
 import IntlContext from 'contexts/intl/IntlContext';
-import languages from 'contexts/intl/data/languages';
-import defaultLanguage from 'contexts/intl/data/defaultLanguage';
+import languages, { defaultLanguage } from 'contexts/intl/data/languages';
 
 const defaultLocale = defaultLanguage.locale;
 

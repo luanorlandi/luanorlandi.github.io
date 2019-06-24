@@ -1,7 +1,7 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 
-import IntlContext from 'contexts/intl/IntlContext';
+import { IntlProvider } from 'contexts/intl/IntlContext';
 import Layout from 'components/Layout';
 import SEO from 'components/Seo';
 
@@ -17,34 +17,35 @@ const Post = ({
       date,
     },
   },
-}) => {
-  const intl = useContext(IntlContext);
-
-  return (
-    <Layout>
-      <SEO
-        lang={intl.locale}
-        title={title}
-        description={description}
-        keywords={keywords}
-      />
-      <div className="section is-size-4-desktop is-size-5-touch">
-        <div className="container content post__container">
-          <main>
-            <article>
-              <header>
-                <h1 className="title has-text-centered has-text-light">{title}</h1>
-              </header>
-              <hr />
-              <p className="post__date">{intl.formatDate(date, { year: 'numeric', month: 'long', day: 'numeric' })}</p>
-              {children}
-            </article>
-          </main>
+  location,
+}) => (
+  <IntlProvider pathname={location.pathname}>
+    {({ locale, formatDate }) => (
+      <Layout>
+        <SEO
+          lang={locale}
+          title={title}
+          description={description}
+          keywords={keywords}
+        />
+        <div className="section is-size-4-desktop is-size-5-touch">
+          <div className="container content post__container">
+            <main>
+              <article>
+                <header>
+                  <h1 className="title has-text-centered has-text-light">{title}</h1>
+                </header>
+                <hr />
+                <p className="post__date">{formatDate(date, { year: 'numeric', month: 'long', day: 'numeric' })}</p>
+                {children}
+              </article>
+            </main>
+          </div>
         </div>
-      </div>
-    </Layout>
-  );
-};
+      </Layout>
+    )}
+  </IntlProvider>
+);
 
 Post.propTypes = {
   children: PropTypes.node.isRequired,
@@ -56,6 +57,9 @@ Post.propTypes = {
       date: PropTypes.string,
     }),
   }),
+  location: PropTypes.shape({
+    pathname: PropTypes.string.isRequired,
+  }).isRequired,
 };
 
 Post.defaultProps = {
