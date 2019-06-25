@@ -1,8 +1,29 @@
-.post__container {
+.post {
+  position: relative;
+  flex-grow: 1;
+  margin: 0 auto;
+  padding: 12px;
+  width: auto;
   max-width: 768px;
+  line-height: 2.5rem;
+  font-size: 1.6rem;
+
+  @include desktop {
+    padding: 24px;
+  }
 }
 
-.post__date {
-  text-align: right;
+.post__title {
+  margin-bottom: 1.5rem;
+  text-align: center;
+  font-size: 2.5rem;
+}
+
+.post__time {
   font-size: 1rem;
+}
+
+.post__main-image {
+  margin-top: .5rem;
+  margin-bottom: 1.5rem;
 }

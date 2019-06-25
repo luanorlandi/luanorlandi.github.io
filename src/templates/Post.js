@@ -1,71 +1,91 @@
 import React from 'react';
+import { graphql, Link } from 'gatsby';
 import PropTypes from 'prop-types';
+import Image from 'gatsby-image';
 
-import { IntlProvider } from 'contexts/intl/IntlContext';
 import Layout from 'components/Layout';
 import SEO from 'components/Seo';
+import BlockContent from 'components/BlockContent';
+import { IntlProvider } from 'contexts/intl/IntlContext';
 
-import './Post.scss';
+export const query = graphql`
+  query Post ($slug: String) {
+    sanityPost(slug: {current: {eq: $slug}}) {
+      title
+      locale
+      description
+      mainImage {
+        asset {
+          fluid {
+            ...GatsbySanityImageFluid
+          }
+        }
+      }
+      publishedAt
+      _rawBody
+    }
+  }
+`;
 
-const Post = ({
-  children,
-  pageContext: {
-    frontmatter: {
-      title,
-      description,
-      keywords,
-      date,
-    },
-  },
-  location,
-}) => (
-  <IntlProvider pathname={location.pathname}>
-    {({ locale, formatDate }) => (
-      <Layout>
-        <SEO
-          lang={locale}
-          title={title}
-          description={description}
-          keywords={keywords}
-        />
-        <div className="section is-size-4-desktop is-size-5-touch">
-          <div className="container content post__container">
-            <main>
-              <article>
-                <header>
-                  <h1 className="title has-text-centered has-text-light">{title}</h1>
-                </header>
-                <hr />
-                <p className="post__date">{formatDate(date, { year: 'numeric', month: 'long', day: 'numeric' })}</p>
-                {children}
-              </article>
-            </main>
-          </div>
-        </div>
-      </Layout>
-    )}
-  </IntlProvider>
-);
+const Post = ({ data, location }) => {
+  const {
+    title,
+    locale,
+    description,
+    mainImage,
+    publishedAt,
+    _rawBody,
+  } = data.sanityPost;
+
+  return (
+    <IntlProvider pathname={location.pathname}>
+      {({ formatDate, formatMessage, getPath }) => (
+        <Layout>
+          <SEO
+            lang={locale}
+            title={title}
+            description={description}
+            meta={[{ property: 'og:type', content: 'article' }]}
+          />
+          <article className="post">
+            <h1 className="post__title">{title}</h1>
+            <hr />
+            {publishedAt && (
+              <time dateTime={publishedAt} className="post__time">
+                {formatDate(publishedAt, {
+                  year: 'numeric',
+                  month: 'long',
+                  day: 'numeric',
+                })}
+              </time>
+            )}
+            {mainImage && (
+              <div className="post__main-image">
+                <Image fluid={mainImage.asset.fluid} alt={title} />
+              </div>
+            )}
+            {_rawBody && (
+              <BlockContent blocks={_rawBody} />
+            )}
+          </article>
+          <p className="has-text-centered">
+            {formatMessage({ id: 'checkOut' })}
+            {' '}
+            <Link to={getPath('blog')}>
+              {formatMessage({ id: 'stack.posts' })}
+            </Link>
+          </p>
+        </Layout>
+      )}
+    </IntlProvider>
+  );
+};
 
 Post.propTypes = {
-  children: PropTypes.node.isRequired,
-  pageContext: PropTypes.objectOf({
-    frontmatter: PropTypes.objectOf({
-      title: PropTypes.string.required,
-      description: PropTypes.string,
-      keywords: PropTypes.string,
-      date: PropTypes.string,
-    }),
-  }),
+  data: PropTypes.object.isRequired,
   location: PropTypes.shape({
     pathname: PropTypes.string.isRequired,
   }).isRequired,
-};
-
-Post.defaultProps = {
-  pageContext: {
-    frontmatter: {},
-  },
 };
 
 export default Post;

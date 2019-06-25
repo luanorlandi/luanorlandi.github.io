@@ -1,3 +1,5 @@
+require('dotenv').config();
+
 module.exports = {
   siteMetadata: {
     title: 'Luan Orlandi',
@@ -42,9 +44,6 @@ module.exports = {
     {
       resolve: 'gatsby-mdx',
       options: {
-        defaultLayouts: {
-          default: require.resolve('./src/templates/Post'),
-        },
         gatsbyRemarkPlugins: [
           {
             resolve: 'gatsby-remark-images',
@@ -60,6 +59,14 @@ module.exports = {
       resolve: 'gatsby-source-filesystem',
       options: {
         path: `${__dirname}/src/pages`,
+      },
+    },
+    {
+      resolve: 'gatsby-source-sanity',
+      options: {
+        projectId: '7mx78yct',
+        dataset: 'production',
+        token: process.env.SANITY_TOKEN,
       },
     },
   ],
