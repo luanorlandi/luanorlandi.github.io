@@ -1,5 +1,9 @@
 .block-content-p {
-  margin: 0 0 2.5rem;
+  margin: 0 0 2rem;
+
+  @include desktop {
+    margin: 0 0 2.5rem;
+  }
 }
 
 .block-content-h1 {
@@ -7,13 +11,12 @@
 }
 
 .block-content-h2 {
-  font-size: 2.0rem;
+  font-size: 2rem;
 }
 
 .block-content-blockquote {
   margin: 0 0 2.5rem;
   line-height: 3rem;
-  color: #8e8e8e;
   font-size: 2rem;
   font-style: italic;
 }
