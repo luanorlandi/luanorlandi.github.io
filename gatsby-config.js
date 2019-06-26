@@ -64,8 +64,8 @@ module.exports = {
     {
       resolve: 'gatsby-source-sanity',
       options: {
-        projectId: '7mx78yct',
-        dataset: 'production',
+        projectId: process.env.GATSBY_SANITY_PROJECT_ID,
+        dataset: process.env.GATSBY_SANITY_DATASET,
         token: process.env.SANITY_TOKEN,
       },
     },

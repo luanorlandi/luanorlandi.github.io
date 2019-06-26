@@ -32,7 +32,12 @@ const serializers = {
 };
 
 const BlockContent = ({ blocks }) => (
-  <BaseBlockContent blocks={blocks} serializers={serializers} />
+  <BaseBlockContent
+    projectId={process.env.GATSBY_SANITY_PROJECT_ID}
+    dataset={process.env.GATSBY_SANITY_DATASET}
+    blocks={blocks}
+    serializers={serializers}
+  />
 );
 
 BlockContent.propTypes = {
