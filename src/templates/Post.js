@@ -69,12 +69,13 @@ const Post = ({ data, location }) => {
             )}
           </article>
           <p className="has-text-centered">
-            {formatMessage({ id: 'checkOut' })}
+            {formatMessage({ id: 'checkOut.posts' })}
             {' '}
             <Link to={getPath('blog')}>
               {formatMessage({ id: 'stack.posts' })}
             </Link>
           </p>
+          <br />
         </Layout>
       )}
     </IntlProvider>
