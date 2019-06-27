@@ -42,26 +42,6 @@ module.exports = {
     },
     'gatsby-plugin-sitemap',
     {
-      resolve: 'gatsby-mdx',
-      options: {
-        gatsbyRemarkPlugins: [
-          {
-            resolve: 'gatsby-remark-images',
-            options: {
-              maxWidth: 768,
-              sizeByPixelDensity: true,
-            },
-          },
-        ],
-      },
-    },
-    {
-      resolve: 'gatsby-source-filesystem',
-      options: {
-        path: `${__dirname}/src/pages`,
-      },
-    },
-    {
       resolve: 'gatsby-source-sanity',
       options: {
         projectId: process.env.GATSBY_SANITY_PROJECT_ID,

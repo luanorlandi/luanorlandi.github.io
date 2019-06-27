@@ -5,4 +5,16 @@
   &:hover {
     background-color: $card-hover-color;
   }
+
+  .media-left {
+    .gatsby-image-wrapper {
+      @include touch {
+        width: 60px;
+        height: 60px;
+      }
+
+      width: 96px;
+      height: 96px;
+    }
+  }
 }
