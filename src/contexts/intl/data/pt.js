@@ -39,6 +39,7 @@ export default {
     'posts.learnReact.subtitle': 'Torne divertido',
     'posts.learnReact.imageAlt': 'Jogue como lego',
     checkOut: 'Veja',
+    'checkOut.posts': 'Veja mais posts no meu',
     noscript: 'Este site funciona melhor com JavaScript habilitado',
     ...common,
   },

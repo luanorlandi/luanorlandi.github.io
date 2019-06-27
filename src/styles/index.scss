@@ -19,3 +19,10 @@
 @import '../components/Header/Header';
 @import '../components/Card/Card';
 @import '../components/LanguageSwitcher/LanguageSwitcher';
+@import '../components/BlockContent/BlockContent';
+@import '../templates/Post';
+
+hr {
+  margin: 1rem auto;
+  width: 60px;
+}

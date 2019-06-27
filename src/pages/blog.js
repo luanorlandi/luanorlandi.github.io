@@ -1,33 +1,45 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { StaticQuery, graphql } from 'gatsby';
-import Img from 'gatsby-image';
+import Image from 'gatsby-image';
 import { FormattedMessage } from 'react-intl';
 
 import Layout from 'components/Layout';
 import SEO from 'components/Seo';
 import Card from 'components/Card';
 import { IntlProvider } from 'contexts/intl/IntlContext';
-import { externalLink } from 'constants/paths';
 
 const queryImage = graphql`
   query {
-    post1: file(relativePath: { eq: "how-gatsby-is-blazing-fast.jpg" }) {
-      childImageSharp {
-        fixed(width: 96, height: 96) {
-          ...GatsbyImageSharpFixed
-        }
-      }
-    }
-    post2: file(relativePath: { eq: "learn-react.jpg" }) {
-      childImageSharp {
-        fixed(width: 96, height: 96) {
-          ...GatsbyImageSharpFixed
+    allSanityPost {
+      edges {
+        node {
+          slug {
+            current
+          }
+          locale
+          title
+          description
+          mainImage {
+            asset {
+              fluid {
+                ...GatsbySanityImageFluid
+              }
+            }
+          }
         }
       }
     }
   }
 `;
+
+const getLocalePath = (locale) => {
+  if (locale === 'en') {
+    return '';
+  }
+
+  return `/${locale}`;
+};
 
 const Blog = ({ location }) => (
   <IntlProvider pathname={location.pathname}>
@@ -49,24 +61,37 @@ const Blog = ({ location }) => (
               <div className="column is-half is-offset-one-quarter">
                 <StaticQuery
                   query={queryImage}
-                  render={data => (
-                    <>
-                      <Card
-                        title={formatMessage({ id: 'posts.gatsbyBlazingFast.title' })}
-                        subtitle={formatMessage({ id: 'posts.gatsbyBlazingFast.subtitle' })}
-                        link={externalLink.gatsbyBlazingFast}
-                        tags={['Gatsby']}
-                        image={<Img fixed={data.post1.childImageSharp.fixed} alt={formatMessage({ id: 'posts.gatsbyBlazingFast.imageAlt' })} />}
-                      />
-                      <Card
-                        title={formatMessage({ id: 'posts.learnReact.title' })}
-                        subtitle={formatMessage({ id: 'posts.learnReact.subtitle' })}
-                        link={externalLink.learnReact}
-                        tags={['React']}
-                        image={<Img fixed={data.post2.childImageSharp.fixed} alt={formatMessage({ id: 'posts.learnReact.imageAlt' })} />}
-                      />
-                    </>
-                  )}
+                  render={(data) => {
+                    if (data.errors) {
+                      throw data.errors;
+                    }
+
+                    const posts = data.allSanityPost.edges.map(({ node }) => (
+                      node
+                    ));
+                    const postsLocale = posts.filter(post => (
+                      post.locale === locale
+                    ));
+
+                    return (
+                      <>
+                        {postsLocale.map(post => (
+                          <Card
+                            key={post.slug.current}
+                            title={post.title}
+                            subtitle={post.description}
+                            link={`${getLocalePath(post.locale)}/blog/${post.slug.current}`}
+                            image={(
+                              <Image
+                                fluid={post.mainImage.asset.fluid}
+                                alt={post.title}
+                              />
+                            )}
+                          />
+                        ))}
+                      </>
+                    );
+                  }}
                 />
               </div>
             </div>
