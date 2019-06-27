@@ -11,30 +11,91 @@
   @include desktop {
     padding: 24px;
     line-height: 2.5rem;
-    font-size: 1.6rem;
+    font-size: 1.4rem;
   }
 
   figure {
     margin-top: .5rem;
     margin-bottom: 1.5rem;
+
+    @include mobile {
+      margin-right: -12px;
+      margin-left: -12px;
+    }
   }
 
-  .block-content-p {
+  h1 {
+    margin-bottom: 2rem;
+    color: $white;
+    font-size: 2.5rem;
+  }
+
+  h2 {
+    margin-bottom: 2rem;
+    color: $white;
+    font-size: 2.2rem;
+  }
+
+  h3 {
+    margin-bottom: 2rem;
+    color: $white;
+    font-size: 2rem;
+  }
+
+  h4 {
+    margin-bottom: 2rem;
+    color: $white;
+    font-size: 1.8rem;
+  }
+
+  p {
+    margin-bottom: 2rem;
+
+    @include desktop {
+      margin: 0 0 2.5rem;
+    }
+
     a {
       word-break: break-word;
     }
+  }
+
+  ul {
+    margin-bottom: 2rem;
+    list-style: disc;
+  }
+
+  ol {
+    margin-bottom: 2rem;
+  }
+
+  blockquote {
+    margin: 0 0 2.5rem;
+    line-height: 2.8rem;
+    font-size: 1.7rem;
+    font-style: italic;
+  }
+
+  strong {
+    color: $white;
   }
 }
 
 .post__main-image {
   margin-top: .5rem;
   margin-bottom: 1.5rem;
+
+  @include mobile {
+    margin-right: -12px;
+    margin-left: -12px;
+  }
 }
 
 .post__title {
   margin-top: 1.5rem;
   margin-bottom: 1.5rem;
   text-align: center;
+  line-height: 2.8rem;
   font-size: 1.8rem;
 
   @include desktop {

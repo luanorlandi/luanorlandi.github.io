@@ -49,7 +49,6 @@ const Post = ({ data, location }) => {
           />
           <article className="post">
             <h1 className="post__title">{title}</h1>
-            <hr />
             {publishedAt && (
               <time dateTime={publishedAt} className="post__time">
                 {formatDate(publishedAt, {
