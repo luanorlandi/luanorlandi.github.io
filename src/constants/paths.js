@@ -11,7 +11,7 @@ export const externalLink = {
   twitter: 'https://twitter.com/luanorlandi',
   medium: 'https://medium.com/@luanorlandi',
   linkedin: 'https://www.linkedin.com/in/luanorlandi/',
-  gatsbyCourse: 'https://www.udemy.com/gatsby-crie-seu-site-pessoal',
+  gatsbyCourse: 'https://www.udemy.com/gatsby-crie-seu-site-pessoal/?couponCode=S-2019',
   kasselLabs: 'https://kassellabs.io',
   ticTacPorg: 'https://luanorlandi.github.io/tic-tac-porg',
   slackParrot: 'https://www.npmjs.com/package/slack-parrot',
