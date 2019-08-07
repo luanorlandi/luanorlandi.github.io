@@ -80,7 +80,7 @@ const Projects = ({ location }) => (
                       <Card
                         title={formatMessage({ id: 'projects.gatsbyCourse.title' })}
                         subtitle={formatMessage({ id: 'projects.gatsbyCourse.subtitle' })}
-                        link={externalLink.gatsbycourse}
+                        link={externalLink.gatsbyCourse}
                         tags={['Gatsby', 'React']}
                         image={<Img fixed={data.propject1.childImageSharp.fixed} alt={formatMessage({ id: 'projects.gatsbyCourse.imageAlt' })} />}
                       />
